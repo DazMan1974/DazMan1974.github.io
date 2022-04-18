@@ -1,0 +1,191 @@
+/*
+ CSS for the main interaction
+ 
+ .topnav {
+    position: relative;
+    z-index: 2;
+    font-size: 17px;
+    background-color: #282A35;
+    color: #f1f1f1;
+    width: 100%;
+    padding: 0;
+    letter-spacing: 1px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+*/
+
+	.tabset > input[type="radio"] {
+		position: absolute;
+		left: -200vw;
+	}
+
+	.tabset .tab-panel {
+		display: none;
+	}
+
+	.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+	.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+	.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+	.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+	.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+	.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6),
+	.tabset > input:nth-child(13):checked ~ .tab-panels > .tab-panel:nth-child(7),
+	.tabset > input:nth-child(15):checked ~ .tab-panels > .tab-panel:nth-child(8),
+	.tabset > input:nth-child(17):checked ~ .tab-panels > .tab-panel:nth-child(9),
+	.tabset > input:nth-child(19):checked ~ .tab-panels > .tab-panel:nth-child(10),
+	.tabset > input:nth-child(21):checked ~ .tab-panels > .tab-panel:nth-child(11) {
+		display: block;
+	}
+
+	/*
+	 Styling
+	*/
+	body {
+		font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
+		color: #333;
+		font-weight: 300;
+	}
+
+	.tabset > label {
+		position: relative;
+		display: inline-block;
+		padding: 15px 15px 25px;
+		border: 1px solid transparent;
+		border-bottom: 0;
+		cursor: pointer;
+		font-weight: 600;
+	}
+
+		.tabset > label::after {
+			content: "";
+			position: absolute;
+			left: 15px;
+			bottom: 10px;
+			width: 22px;
+			height: 4px;
+			background: #8d8d8d;
+		}
+
+		.tabset > label:hover,
+		.tabset > input:focus + label {
+			color: #06c;
+		}
+
+			.tabset > label:hover::after,
+			.tabset > input:focus + label::after,
+			.tabset > input:checked + label::after {
+				background: #06c;
+			}
+
+	.tabset > input:checked + label {
+		border-color: #ccc;
+		border-bottom: 1px solid #fff;
+		margin-bottom: -1px;
+	}
+
+	.tab-panel {
+		padding: 30px 0;
+		border-top: 1px solid #ccc;
+	}
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: border-box;
+	}
+
+	body {
+		padding: 30px;
+	}
+
+	.tabset {
+		max-width: 65em;
+	}
+/* Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black; */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  left: 50%;
+  margin-left: -60px;
+  
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Image */
+img {
+  width: 150px;
+  height: 150px;  
+  margin: 10px 0;
+  float: right;
+}
+
+.contain {
+  object-fit: contain;
+}
+
+/* Footer */
+#footer .copyright {
+	text-align: center;
+	color: rgba(128, 128, 128, 0.75);
+	font-size: 0.8em;
+	cursor: default;
+}
+
+#footer .copyright a {
+	color: rgba(128, 128, 128, 0.75);
+}
+
+#footer .copyright a:hover {
+	color: #06c /*gba(212, 212, 212, 0.85);*/
+}
+
+/* Menu */
+ul.menu {
+	height: auto;
+	text-align: center;
+}
+
+ul.menu li {
+	display: block;
+	border: 0;
+	padding: 0.75em 0 0 0;
+	margin: 0;
+}
+
+ul.menu li:first-child {
+	padding-top: 0;
+}
